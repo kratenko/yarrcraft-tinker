@@ -35,10 +35,12 @@ function Power.liq(self)
 		local t = tank.getTanks("unknown")
 --		print(textutils.serialize(t))
 		for m, t2 in pairs(t) do
-			if t2.name = "tile.oilStill" then
+			if t2.name == "tile.oilStill" then
 				self.oil.cap = self.oil.cap + t2.capacity
-			elseif t2.name = "item.fuel" then
+				self.oil.cur = self.oil.cur + t2.amount
+			elseif t2.name == "item.fuel" then
 				self.fuel.cap = self.fuel.cap + t2.capacity
+				self.fuel.cur = self.fuel.cur + t2.amount
 			end
 			print(t2.name)
 			print(t2.capacity)
