@@ -33,9 +33,16 @@ function Power.liq(self)
 	self:init_liquids()
 	for n, tank in pairs(self.tanks) do
 		local t = tank.getTanks("unknown")
-		print(textutils.serialize(t))
+--		print(textutils.serialize(t))
+		for m, t2 in pairs(self.tanks) do
+			print(t2.name)
+			print(t2.capacity)
+			print(t2.amount)
+		end
 	end
 end
 
 local p = Power.new()
-print(p)
+p:find()
+p:liq()
+
