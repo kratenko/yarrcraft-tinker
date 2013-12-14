@@ -35,7 +35,7 @@ function Loot.find(self)
 end
 
 
-function Loot.liquids(self)
+function Loot.do_liquids(self)
 	self:init_liquids()
 	for n, tank in pairs(self.tanks) do
 		local t = tank.getTanks("unknown")
@@ -56,7 +56,7 @@ function Loot.liquids(self)
 end
 
 
-function Loot.power(self)
+function Loot.do_power(self)
 	self.power = {capacity=0, amount=0, count=0}
 	for n, cell in pairs(self.cells) do
 		self.count = self.count + 1
@@ -68,7 +68,8 @@ end
 
 local p = Loot.new()
 p:find()
-p:liquids()
+p:do_liquids()
+p:do_power()
 print("oil")
 print(textutils.serialize(p.oil))
 print("fuel")
