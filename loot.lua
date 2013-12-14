@@ -49,6 +49,10 @@ function Loot.do_liquids(self)
 				self.fuel.count = self.fuel.count + 1
 				self.fuel.capacity = self.fuel.capacity + t2.capacity
 				self.fuel.amount = self.fuel.amount + t2.amount
+			elseif t2.name == "tile.lava" then
+				self.lava.count = self.lava.count + 1
+				self.lava.capacity = self.lava.capacity + t2.capacity
+				self.lava.amount = self.lava.amount + t2.amount
 			end
 			print(t2.name)
 			print(t2.capacity)
@@ -78,4 +82,6 @@ print("fuel")
 print(textutils.serialize(p.fuel))
 print("power")
 print(textutils.serialize(p.power))
+print("lava")
+print(textutils.serialize(p.lava))
 
