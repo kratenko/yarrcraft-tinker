@@ -42,9 +42,11 @@ function Loot.do_liquids(self)
 --		print(textutils.serialize(t))
 		for m, t2 in pairs(t) do
 			if t2.name == "tile.oilStill" then
+				self.oil.count = self.oil.count + 1
 				self.oil.capacity = self.oil.capacity + t2.capacity
 				self.oil.amount = self.oil.amount + t2.amount
 			elseif t2.name == "item.fuel" then
+				self.fuel.count = self.fuel.count + 1
 				self.fuel.capacity = self.fuel.capacity + t2.capacity
 				self.fuel.amount = self.fuel.amount + t2.amount
 			end
