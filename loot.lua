@@ -59,7 +59,7 @@ end
 function Loot.do_power(self)
 	self.power = {capacity=0, amount=0, count=0}
 	for n, cell in pairs(self.cells) do
-		self.count = self.count + 1
+		self.power.count = self.power.count + 1
 		self.power.capacity = self.power.capacity + cell.getMaxEnergyStored()
 		self.power.amount = self.power.amount + cell.getEnergyStored()
 	end
